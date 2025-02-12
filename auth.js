@@ -4,6 +4,7 @@ import { authConfig } from './auth.config';
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import bcrypt from 'bcrypt';
+
 async function getUser(email) {
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
